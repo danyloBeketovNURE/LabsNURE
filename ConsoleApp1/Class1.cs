@@ -4,16 +4,20 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class ABONENT
+    class STUDIO
     {
-        private string _phoneNumber;
-        private Tarif _tarif;
-        private int _balance;
-        private int _cenaZaMinutu = 0;
+        private string _studioName;
+        private string _studioAdress;
+        private int _workersCount;
+        private int _cenaZaTraсk = 0;
+        private int _timeForTraсk = 0;
+        private int _emploeeMonthSalery = 0;
+        private int _allEmploeesMonthSalery = 0;
+        private int _musicalInstrumentCount = 0;
         private List<string> _poslugi = new List<string>();
         private List<string> _callHistory = new List<string>();
 
-        public ABONENT(){
+        public STUDIO(){
             _phoneNumber = inputPhoneNumber();
             _tarif = inputTarifName();
             _balance = 0;
