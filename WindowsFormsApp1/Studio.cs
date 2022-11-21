@@ -103,12 +103,14 @@ namespace WindowsFormsApp1
             if (_instrumentRoomCount == 0)
             {
                 _instrumentRoomCount++;
+                _studioMoneyBalance-=10000;
                 MessageBox.Show("Room builded !!congratulations!!");
                 return;
             }
             if (_musicalInstrumentCount - _instrumentRoomCount*2 >1 && _workersCount - _instrumentRoomCount*2 > 1)
             {
                 _instrumentRoomCount++;
+                _studioMoneyBalance -= 10000;
                 MessageBox.Show("Room builded !!congratulations!!");
                 return;
             }

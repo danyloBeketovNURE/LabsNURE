@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
             textBox7.Text = _list[index].allEmploeesMonthSalery.ToString();
             textBox8.Text = _list[index].musicalInstrumentCount.ToString();
             textBox9.Text = _list[index].instrumentRoomCount.ToString();
+            textBox10.Text = _list[index].studioMoneyBalance.ToString();
         }
 
         private void buildNewRoom_Click(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace WindowsFormsApp1
             int index = comboBox1.SelectedIndex;
             _list[index].buildNewInstrumentalRoom();
             textBox9.Text = _list[index].instrumentRoomCount.ToString();
+            textBox10.Text = _list[index].studioMoneyBalance.ToString();
         }
 
         private void destroyRoom_Click(object sender, EventArgs e)
@@ -112,10 +114,20 @@ namespace WindowsFormsApp1
                 return;
             }
             int index = comboBox1.SelectedIndex;
-            //_list[index].hireEmployee();
-            //textBox3.Text = _list[index].workersCount.ToString();
+            _list[index].buyNewInstrument();
+            textBox8.Text = _list[index].musicalInstrumentCount.ToString();
         }
-
+        private void brokeInstrument_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("please select studio");
+                return;
+            }
+            int index = comboBox1.SelectedIndex;
+            _list[index].brokeInstrument();
+            textBox8.Text = _list[index].musicalInstrumentCount.ToString();
+        }
         private void copyStudio_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == -1)
@@ -127,6 +139,22 @@ namespace WindowsFormsApp1
             Studio cloned = (Studio)_list[index].Clone();
             _list.Add(cloned);
             comboBox1.Items.Add(cloned.studioName);
+        }
+
+        private void addBalance_Click(object sender, EventArgs e)
+        {
+            string toCheck = textBox11.Text;
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("please select studio");
+                return;
+            }
+            if (toCheck != "")
+            {
+                int index = comboBox1.SelectedIndex;
+                _list[index].addBalance(Convert.ToInt32(textBox11.Text));
+                textBox10.Text = _list[index].studioMoneyBalance.ToString();
+            }
         }
     }
 }

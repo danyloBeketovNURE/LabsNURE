@@ -59,6 +59,8 @@ namespace WindowsFormsApp1
             this.brokeInstrument = new System.Windows.Forms.Button();
             this.buyInstrument = new System.Windows.Forms.Button();
             this.copyStudio = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.addBalance = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -303,6 +305,7 @@ namespace WindowsFormsApp1
             this.brokeInstrument.TabIndex = 28;
             this.brokeInstrument.Text = "broke one instrubent";
             this.brokeInstrument.UseVisualStyleBackColor = true;
+            this.brokeInstrument.Click += new System.EventHandler(this.brokeInstrument_Click);
             // 
             // buyInstrument
             // 
@@ -324,11 +327,30 @@ namespace WindowsFormsApp1
             this.copyStudio.UseVisualStyleBackColor = true;
             this.copyStudio.Click += new System.EventHandler(this.copyStudio_Click);
             // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(581, 138);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(100, 22);
+            this.textBox11.TabIndex = 30;
+            // 
+            // addBalance
+            // 
+            this.addBalance.Location = new System.Drawing.Point(581, 172);
+            this.addBalance.Name = "addBalance";
+            this.addBalance.Size = new System.Drawing.Size(100, 57);
+            this.addBalance.TabIndex = 31;
+            this.addBalance.Text = "add balance";
+            this.addBalance.UseVisualStyleBackColor = true;
+            this.addBalance.Click += new System.EventHandler(this.addBalance_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(826, 458);
+            this.Controls.Add(this.addBalance);
+            this.Controls.Add(this.textBox11);
             this.Controls.Add(this.copyStudio);
             this.Controls.Add(this.brokeInstrument);
             this.Controls.Add(this.buyInstrument);
@@ -398,6 +420,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button brokeInstrument;
         private System.Windows.Forms.Button buyInstrument;
         private System.Windows.Forms.Button copyStudio;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Button addBalance;
     }
 }
 
